@@ -1,4 +1,5 @@
 import React from 'react';
+import {connect} from 'react-redux';
 
 function Login(props){
 
@@ -12,4 +13,10 @@ function Login(props){
 
 }
 
+
+//example of how to bring state to a component
+
+const mapStateToProps = (state) => ({
+  item:state.item      // this part breaks state apart so you don't have to use state.example for everything. this page is still missing pieces though so bad example atm. 
+})
 export default Login
