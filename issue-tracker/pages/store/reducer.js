@@ -11,6 +11,7 @@ export default (state = initialState, action) => {
 // this is called an action, they are just plain js objects that have a 'type' property and a payload property. type is checked in the switch to determine the action. the payload is whatever data.
   case 'COUNT': 
     return payload;
+    
   default: return state;
   }
 
