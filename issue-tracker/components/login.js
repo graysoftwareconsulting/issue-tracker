@@ -1,6 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
+//it will be a bit of a hassle to remember but we might consider using 'prop-types', it would help us control the shape of the data moving around and stop unexpected bugs later. 
+
 function Login(props){
 
   let state = {
@@ -8,7 +10,7 @@ function Login(props){
 
   }
   return(
-    <h1>We've got {state.title} </h1>
+    <h1>We've got {props.text} </h1>
     )
 
 }
@@ -17,6 +19,6 @@ function Login(props){
 //example of how to bring state to a component
 
 const mapStateToProps = (state) => ({
-  item:state.item      // this part breaks state apart so you don't have to use state.example for everything. this page is still missing pieces though so bad example atm. 
+  text:state.todos.text,      // this part breaks state apart so you don't have to use state.example for everything. this page is still missing pieces though so bad example atm. 
 })
-export default Login
+export default connect(mapStateToProps)(Login)
