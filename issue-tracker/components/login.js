@@ -10,7 +10,7 @@ function Login(props){
 
   }
   return(
-    <h1>We've got {JSON.stringify(props)} </h1>
+    <h1>We've got {JSON.stringify(props.text)} </h1>
     )
 
 }
@@ -20,7 +20,7 @@ function Login(props){
 
 function mapStateToProps(state){
   return{
-    text:state.todos
+    text:state.text
   }
 }
 export default connect(mapStateToProps)(Login)

@@ -1,4 +1,8 @@
-const todos = (state = [], action) => {
+const initialState = {
+  text:'heres the text'
+}
+
+const todos = (state = initialState, action) => {
   switch (action.type) {
     case 'ADD_TODO':
       return [
