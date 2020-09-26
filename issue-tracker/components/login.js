@@ -18,7 +18,8 @@ function logIn(user){
   if(user.name === 'user' && user.password === 'secret'){
     //bring in a function to handle logins into the actual server
     //for now...
-    
+    state.loggedIn = !state.loggedIn;
+    return true
   }
 }
   return(
