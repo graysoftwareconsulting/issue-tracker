@@ -1,5 +1,6 @@
 const initialState = {
-  text:'heres the text'
+  text:'heres the text',
+  loggedIn: true,
 }
 
 const todos = (state = initialState, action) => {

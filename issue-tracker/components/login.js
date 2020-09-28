@@ -13,19 +13,25 @@ function Login(props){
     loggedIn:true,
   }
 
-function logIn(user){
+  function handleChange(event){
+    this.setState
+  }
 
-  if(user.name === 'user' && user.password === 'secret'){
+function logIn(event){
+  event.preventDefault()
+
+  console.log(event.target)
+  if(event.name === 'userName' && event.password === 'password'){
     //bring in a function to handle logins into the actual server
     //for now...
-    state.loggedIn = !state.loggedIn;
+    loggedIn = !loggedIn;
     return true
   }
 }
   return(
     <>
-    <If condition = {state.loggedIn}> 
-    <form onSubmit = {logIn()}>
+    <If condition = {loggedIn}> 
+    <form onSubmit = {logIn}>
       <input name = 'userName' placeholder = 'Username'></input>
       <input name = 'password' placeholder = 'Password'></input>
       <button type = 'submit'> Login</button>
@@ -43,7 +49,8 @@ function logIn(user){
 
 function mapStateToProps(state){
   return{
-    text:state.text
+    text:state.text,
+    loggedIn:state.loggedIn
   }
 }
 export default connect(mapStateToProps)(Login)
