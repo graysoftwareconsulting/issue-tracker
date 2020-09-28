@@ -9,24 +9,24 @@ let If = (props) => {return !!props.condition ? props.children : null};
 function Login(props){
 
   let state = {
-    title:'Connection!',
-    loggedIn:true,
+
   }
 
-  function handleChange(event){
-    this.setState
+  function handleChange(e){
+    e.preventDefault();
+    this.setState({[e.target.name]:[e.target.value]})
   }
 
-function logIn(event){
-  event.preventDefault()
+function handleSubmit(e){
+  e.preventDefault()
 
-  console.log(event.target)
-  if(event.name === 'userName' && event.password === 'password'){
-    //bring in a function to handle logins into the actual server
-    //for now...
-    loggedIn = !loggedIn;
-    return true
-  }
+  console.log(this.state)
+  // if(this.state === 'userName' && this.state === 'password'){
+  //   //bring in a function to handle logins into the actual server
+  //   //for now...
+  //   loggedIn = !loggedIn;
+  //   return true
+  // }
 }
   return(
     <>
