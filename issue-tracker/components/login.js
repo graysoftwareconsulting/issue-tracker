@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import store from '../pages/store/store.js'
 
 
 let If = (props) => {return !!props.condition ? props.children : null};
@@ -19,14 +20,10 @@ function Login(props){
 
 function handleSubmit(e){
   e.preventDefault()
+  store.dispatch({type:'LOGIN_UPDATED'})
 
-  console.log(this.state)
-  // if(this.state === 'userName' && this.state === 'password'){
-  //   //bring in a function to handle logins into the actual server
-  //   //for now...
-  //   loggedIn = !loggedIn;
-  //   return true
-  // }
+  console.log('ping')
+  console.log(props)
 }
   return(
     <>
@@ -46,7 +43,6 @@ function handleSubmit(e){
 
 
 //example of how to bring state to a component
-
 function mapStateToProps(state){
   return{
     text:state.text,
