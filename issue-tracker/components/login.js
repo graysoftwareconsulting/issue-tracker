@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import store from '../pages/store/store.js'
+// import store from '../pages/store/store.js'
 
 
 let If = (props) => {return !!props.condition ? props.children : null};
@@ -20,20 +20,19 @@ function Login(props){
 
 function handleSubmit(e){
   e.preventDefault()
-  store.dispatch({type:'LOGIN_UPDATED'})
-
+  props.dispatch({type:'LOGIN_UPDATED'})
   console.log('ping')
   console.log(props)
 }
   return(
     <>
-    <If condition = {loggedIn}> 
-    <form onSubmit = {logIn}>
+    {/* <If condition = {loggedIn}>  */}
+    <form onSubmit = {handleSubmit}>
       <input name = 'userName' placeholder = 'Username'></input>
       <input name = 'password' placeholder = 'Password'></input>
       <button type = 'submit'> Login</button>
     </form>
-    </If>
+    {/* </If> */}
     <h1>We've got {JSON.stringify(props.text)} </h1>
     </>
 
@@ -43,6 +42,13 @@ function handleSubmit(e){
 
 
 //example of how to bring state to a component
+// function mapDispatchToProps(dispatch){
+//   return{
+//     login: () => dispatch({type:'LOGIN_UPDATED'}),
+
+//   }
+// }
+
 function mapStateToProps(state){
   return{
     text:state.text,

@@ -9,7 +9,7 @@ import todoReducer from './reducer.js';
 //   todos: todoReducer,
 // });
 
-// to creatae the store pass the reducer into the createStore function brought in with redux.
+// to create the store pass the reducer into the createStore function brought in with redux.
 const store = () => createStore(todoReducer);
 
 export default store;
