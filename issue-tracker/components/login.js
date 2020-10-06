@@ -18,21 +18,30 @@ function Login(props){
     this.setState({[e.target.name]:[e.target.value]})
   }
 
-function handleSubmit(e){
+function handleLogin(e){
   e.preventDefault()
-  props.dispatch({type:'LOGIN_UPDATED'})
-  console.log('ping')
-  console.log(props)
+  props.dispatch({type:'LOGGED_IN'})
+  console.log(props,'logged in')
+  return true
 }
+function handleLogout(e){
+  e.preventDefault()
+  props.dispatch({type:'LOGGED_OUT'})
+  return true
+}
+
   return(
     <>
-    {/* <If condition = {loggedIn}>  */}
-    <form onSubmit = {handleSubmit}>
+    <If condition = {!props.loggedIn}>
+    <form onSubmit = {handleLogin}>
       <input name = 'userName' placeholder = 'Username'></input>
       <input name = 'password' placeholder = 'Password'></input>
       <button type = 'submit'> Login</button>
     </form>
-    {/* </If> */}
+    </If>
+    <If condition = {props.loggedIn}>
+      <button onClick={handleLogout}>Log Out</button>
+    </If>
     <h1>We've got {JSON.stringify(props.text)} </h1>
     </>
 
