@@ -5,8 +5,12 @@ const initialState = {
 
 const todos = (state = initialState, action) => {
   switch (action.type) {
-    case 'LOGIN_UPDATED':
-      return(state.loggedIn === true ? state.loggedIn=false : state.loggedIn = true)
+
+    case 'LOGGED_IN':
+      return {...state, loggedIn:true}
+      
+    case 'LOGGED_OUT':
+      return{...state,loggedIn:false}
       
     case 'ADD_TODO':
       return [
