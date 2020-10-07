@@ -11,9 +11,10 @@ function Tasks(props){
     <h2>
       Tasks!
     </h2>
-    <div name='todo'>
+    <div className = ' toDo' name='toDo'>
 
     </div>
+    
     <div name = 'inProgress'>
 
     </div>
