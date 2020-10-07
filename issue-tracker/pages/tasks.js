@@ -1,14 +1,16 @@
 import React from 'react';
 
 
-function tasks(props){
+function Tasks(props){
 
   let state = {
   }
 
   return (
     <>
-
+    <h2>
+      Tasks!
+    </h2>
     <div name='todo'>
 
     </div>
@@ -19,7 +21,8 @@ function tasks(props){
 
     </div>
     </>
-    
+
   )
 
 }
+export default Tasks
